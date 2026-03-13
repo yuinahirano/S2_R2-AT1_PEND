@@ -1,16 +1,9 @@
-let input = document.querySelector("#input");
-let botaoEnviar = document.getElementById("btnEnviar");
+let texto = document.getElementById("texto");
+let botaoMudar = document.getElementById("btnMudar");
 let mensagem = document.getElementById("mensagem");
 
-botaoEnviar.addEventListener("click", ()=>{
-    
-    let nome = input.value;
+botaoMudar.addEventListener("click", () => {
 
-    if (Number(nome) || nome == ""){
-        mensagem.innerText = `Error`
+    texto.innerText = `Texto alterado com JavaScript!`;
 
-    } else {
-        mensagem.innerText = `Olá ${nome}`;
-        
-    }
 })
