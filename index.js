@@ -13,25 +13,42 @@ botaoAdicionar.addEventListener("click", () => {
 
     } else {
 
-        //cria a lista
-        let itemLista = document.createElement("li");
-        itemLista.className = "list-group-item";
-        listaTarefas.appendChild(itemLista);
+        //sumir mensagem
+        mensagem.innerText = "";
+
+        //li
+        let li = document.createElement("li");
+        li.className = "d-flex justify-content-between align-items-center";
+        listaTarefas.appendChild(li);
+        
+        //div do checkbox
+        let itemLista = document.createElement("div");
+        itemLista.className = "form-check";
+        li.appendChild(itemLista);
+        
+        //cria item da lista
+        let checkbox = document.createElement("input");
+        checkbox.className = "form-check-input";
+        checkbox.type = "checkbox";
+        itemLista.appendChild(checkbox);
 
         //cria novo item da lista
-        let novaTarefa = document.createElement("p");
+        let novaTarefa = document.createElement("label");
+        novaTarefa.className = "form-check-label";
         novaTarefa.innerText = tarefa.value;
         itemLista.appendChild(novaTarefa);
 
         //criar o botão remover junto com li e cada tarefa criada
         let botaoRemover = document.createElement("button")
-        botaoRemover.innerText = "Remover";
-        botaoRemover.className ="btn btn-danger btn-sm";
-        itemLista.appendChild(botaoRemover);
+        botaoRemover.className ="btn btn-outline-danger btn-sm m-3 ";
+        botaoRemover.innerText = "🗑️Remover";
+        li.appendChild(botaoRemover);
 
         botaoRemover.addEventListener("click", () => {
         
             itemLista.remove();
+            novaTarefa.remove();
+            botaoRemover.remove();
         
         })
 
