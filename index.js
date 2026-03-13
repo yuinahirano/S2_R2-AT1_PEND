@@ -11,6 +11,8 @@ botaoEnviar.addEventListener("click", () => {
 
     } else {
 
+        mensagem.innerText = null;
+        
         //cria a lista
         let lista = document.createElement("li");
         ul.appendChild(lista);
