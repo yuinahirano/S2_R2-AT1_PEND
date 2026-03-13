@@ -1,7 +1,7 @@
 let item = document.getElementById("item");
 let botaoEnviar = document.getElementById("btnEnviar");
 let mensagem = document.getElementById("mensagem");
-let ul = document.querySelector(".lista");
+let ul = document.getElementById("lista");
 
 botaoEnviar.addEventListener("click", () => {
 
