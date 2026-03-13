@@ -3,7 +3,7 @@ let mensagem = document.getElementById("mensagem");
 let botaoAdicionar = document.getElementById("btnAdicionar");
 let listaTarefas = document.getElementById("listaTarefas");
 
-
+//adicionar tarefa
 botaoAdicionar.addEventListener("click", () => {
 
     //validação do valor inserido
@@ -14,12 +14,31 @@ botaoAdicionar.addEventListener("click", () => {
     } else {
 
         //cria a lista
-        let lista = document.createElement("li");
-        listaTarefas.appendChild(lista);
-        
+        let itemLista = document.createElement("li");
+        itemLista.className = "list-group-item";
+        listaTarefas.appendChild(itemLista);
+
         //cria novo item da lista
         let novaTarefa = document.createElement("p");
         novaTarefa.innerText = tarefa.value;
-        lista.appendChild(novaTarefa);
+        itemLista.appendChild(novaTarefa);
+
+        //criar o botão remover junto com li e cada tarefa criada
+        let botaoRemover = document.createElement("button")
+        botaoRemover.innerText = "Remover";
+        botaoRemover.className ="btn btn-danger btn-sm";
+        itemLista.appendChild(botaoRemover);
+
+        botaoRemover.addEventListener("click", () => {
+        
+            itemLista.remove();
+        
+        })
+
+        
     }
+    
+
 })
+
+//remover tarefa
