@@ -1,23 +1,25 @@
-let item = document.getElementById("item");
-let botaoEnviar = document.getElementById("btnEnviar");
+let tarefa = document.getElementById("inputTarefa");
 let mensagem = document.getElementById("mensagem");
-let ul = document.querySelector(".lista");
+let botaoAdicionar = document.getElementById("btnAdicionar");
+let listaTarefas = document.getElementById("listaTarefas");
 
-botaoEnviar.addEventListener("click", () => {
+
+botaoAdicionar.addEventListener("click", () => {
 
     //validação do valor inserido
-    if (Number(item.value) || item.value == "") {
-        mensagem.innerText = `Error`
+    if (Number(tarefa.value) || !tarefa.value) {
+        mensagem.className = "text-danger text-danger";
+        mensagem.innerText = `Tarefa vazia!`;
 
     } else {
 
         //cria a lista
         let lista = document.createElement("li");
-        ul.appendChild(lista);
+        listaTarefas.appendChild(lista);
         
         //cria novo item da lista
-        let novoItem = document.createElement("p");
-        novoItem.innerText = item.value;
-        lista.appendChild(novoItem);
+        let novaTarefa = document.createElement("p");
+        novaTarefa.innerText = tarefa.value;
+        lista.appendChild(novaTarefa);
     }
 })
