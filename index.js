@@ -1,16 +1,14 @@
-let input = document.querySelector("#input");
+let nome = document.getElementById("nome");
 let botaoEnviar = document.getElementById("btnEnviar");
 let mensagem = document.getElementById("mensagem");
 
 botaoEnviar.addEventListener("click", ()=>{
     
-    let nome = input.value;
-
-    if (Number(nome) || nome == ""){
+    if (Number(nome.value) || nome.value == ""){
         mensagem.innerText = `Error`
 
     } else {
-        mensagem.innerText = `Olá ${nome}`;
+        mensagem.innerText = `Olá ${nome.value}`;
         
     }
 })
