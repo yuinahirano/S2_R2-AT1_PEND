@@ -13,28 +13,29 @@ botaoAdicionar.addEventListener("click", () => {
 
     } else {
 
-        //cria a lista
-        let itemLista = document.createElement("li");
-        itemLista.className = "list-group-item";
-        listaTarefas.appendChild(itemLista);
 
-        //cria novo item da lista
+        //cria div cada item na lista
+        let itemLista = document.createElement("li");
+        itemLista.className = "list-group-item d-flex align-items-center justify-content-between";
+        
+        //cria nova tarefa
         let novaTarefa = document.createElement("p");
         novaTarefa.innerText = tarefa.value;
         itemLista.appendChild(novaTarefa);
-
+        
         //criar o botão remover junto com li e cada tarefa criada
         let botaoRemover = document.createElement("button")
         botaoRemover.innerText = "Remover";
         botaoRemover.className ="btn btn-danger btn-sm";
         itemLista.appendChild(botaoRemover);
-
+        
         botaoRemover.addEventListener("click", () => {
-        
+            
             itemLista.remove();
-        
+            
         })
-
+        
+        listaTarefas.appendChild(itemLista);
         
     }
     
