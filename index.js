@@ -13,7 +13,8 @@ botaoAdicionar.addEventListener("click", () => {
 
     } else {
 
-
+        mensagem.innerText = null;
+        
         //cria div cada item na lista
         let itemLista = document.createElement("li");
         itemLista.className = "list-group-item d-flex align-items-center justify-content-between";
