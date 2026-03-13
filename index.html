@@ -9,21 +9,34 @@
 </head>
 
 <body class="bg-secondary-subtle">
+
     <header class="text-center p-3 mt-5 text-primary">
-        <h1>Cadastro</h1>
+        <h1>Lista de itens</h1>
     </header>
+
+    <!--Parte principal-->
     <main class="container col-7">
         <div class="shadow p-3 mb-5 bg-body-tertiary rounded">
-            <div class="">
-                <label for="nome" class="form-label">Nome</label> <br>
-                <input type="text" name="nome" id="nome" value="" class="form-control" placeholder="Insira seu nome">
-    <br>
-                <button type="submit" id="btnEnviar" class="btn btn-primary mt-2 form-control">Enviar</button>
-    
-            </div>
+            <!--Inserir o item-->
+            <label for="item" class="form-label">Item</label>
+            <input type="text" name="item" id="item" value="" class="form-control" placeholder="Insira seu item">
+
+            <button type="submit" id="btnEnviar" class="btn btn-primary mt-4 form-control">Enviar</button>
+
+            <p id="mensagem" class="text-center mt-4 text-danger"></p>
         </div>
 
-        <p id="mensagem" class="text-center"></p>
+        <!-- lista -->
+        <div>
+            <div class="shadow p-3 mb-5 bg-body-tertiary rounded">
+                <h5 class="text-center">Lista</h3>
+                    <ul class="lista">
+                        
+                    </ul>
+            </div>
+
+        </div>
+
     </main>
     <script src="index.js"></script>
 </body>
