@@ -13,13 +13,16 @@ botaoAdicionar.addEventListener("click", () => {
 
     } else {
 
+        mensagem.innerText = null;
+
         //cria a lista
-        let lista = document.createElement("li");
-        listaTarefas.appendChild(lista);
+        let item = document.createElement("li");
+        item.className = "list-group-item";
         
         //cria novo item da lista
         let novaTarefa = document.createElement("p");
         novaTarefa.innerText = tarefa.value;
-        lista.appendChild(novaTarefa);
+        item.appendChild(novaTarefa);
+        listaTarefas.appendChild(item);
     }
 })
